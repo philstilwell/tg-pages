@@ -1,0 +1,7 @@
+# Tokyo Girl
+
+Published website files for the Tokyo Girl Japanese study companion.
+
+Student progress, notes, expressions, and recordings stay in each browser. Use the website’s backup controls to move text progress between devices. No student saves are stored in this repository.
+
+These files are generated from the maintained private `philstilwell/tg` project. Make changes there, then run `npm run publish:pages`; do not edit this generated repository directly.
