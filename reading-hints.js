@@ -12,7 +12,7 @@ export function readingHintsControl(value, label = 'Reading hints') {
     <select id="reading-mode" hidden aria-label="Reading mode">${modes.map(mode => `<option value="${mode.value}" ${selected.value === mode.value ? 'selected' : ''}>${mode.label}</option>`).join('')}</select>
     <div id="reading-hints-options" class="reading-hints-options" role="listbox" aria-labelledby="reading-hints-label" popover="manual" hidden>${modes.map((mode, index) => `<div id="reading-hints-option-${index}" class="reading-hints-option" role="option" data-reading-option="${index}" aria-selected="${selected.value === mode.value}"><span>${mode.label}</span><span class="reading-option-check" aria-hidden="true">${selected.value === mode.value ? '✓' : ''}</span></div>`).join('')}</div>
     <div id="reading-hints-help" class="reading-hints-popup" role="tooltip" popover="manual" hidden></div>
-  </div>`;
+  </div><button type="button" class="outline-button familiar-shortcut" data-view="familiar">Familiar words</button>`;
 }
 
 // The custom list keeps option hover help available across browsers; the hidden

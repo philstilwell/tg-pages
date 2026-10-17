@@ -116,3 +116,26 @@ html{scroll-padding-top:var(--reader-offset,80px)}
 .reading-hints-popup{width:min(300px,calc(100vw - 24px));padding:12px 14px;max-height:calc(100dvh - 24px);overflow-y:auto;overscroll-behavior:contain;font-size:12px;line-height:1.6;cursor:auto}
 .reading-hints-popup strong{color:var(--blue);font-weight:650}.reading-hints-popup p{margin:4px 0 0}
 @media(max-width:700px){.study-toolbar>.reading-hints-field{flex:1;min-width:0}.reading-mode-trigger{width:100%;min-width:0}.reading-hints-option{min-height:44px}}
+
+/* One compact, course-wide list for managing hidden reading hints. */
+.familiar-shortcut{align-self:end;white-space:nowrap}
+.familiar-page{max-width:850px}
+.familiar-page .page-intro{margin-bottom:22px}
+.familiar-page .page-intro p{max-width:660px}
+.familiar-toolbar{display:flex;align-items:end;gap:16px;margin-bottom:16px}
+.familiar-toolbar label{display:grid;gap:5px;flex:1;font-size:12px}
+.familiar-toolbar input{width:100%;min-width:0;padding:9px 12px;border:1px solid #bccbb3;border-radius:5px;background:var(--white);color:var(--ink)}
+.familiar-toolbar input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.familiar-toolbar button{min-height:40px}
+.familiar-count{font-size:12px;color:var(--muted);margin:0 0 8px}
+.familiar-list{list-style:none;margin:0;padding:0;border:1px solid #cbd5bf;border-radius:8px;overflow:hidden;background:var(--white)}
+.familiar-row{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 18px;border-top:1px solid var(--line)}
+.familiar-row:first-child{border-top:0}
+.familiar-word{min-width:0;overflow-wrap:anywhere;display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 18px}
+.familiar-word strong{font:23px/1.6 var(--jp)}
+.familiar-word span{font:14px/1.6 var(--jp);color:var(--muted)}
+.familiar-row button{flex-shrink:0;min-height:40px}
+.familiar-empty{padding:24px 18px;border:1px solid var(--line);border-radius:8px;background:var(--white)}
+.familiar-empty p{margin:0 0 6px}.familiar-empty p:last-child{margin:0}
+@media(min-width:701px){.sidebar{overflow-y:auto}}
+@media(max-width:700px){.familiar-toolbar{flex-wrap:wrap;gap:10px}.familiar-toolbar label{flex-basis:100%}.familiar-row{padding:10px 12px;gap:10px}.familiar-word{display:grid;gap:2px}.familiar-word strong{font-size:21px}.familiar-row button{min-height:44px}.familiar-shortcut{min-height:40px}}
