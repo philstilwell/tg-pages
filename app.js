@@ -46,7 +46,7 @@ function save(){interacted=true;state.updatedAt=Date.now();course.episodes[scene
 function due(){return queue(state);}
 function saved(line){return Object.values(state.expressions).some(e=>!e.deleted&&e.contexts.includes(line.id));}
 const familiarContext={known:()=>course.known,setFamiliar:(word,reading,familiar)=>setCourseReadingFamiliarity(course,scene.episode,word,reading,familiar)};
-const familiarList=createFamiliarWords({...familiarContext,save,render,toast});
+const familiarList=createFamiliarWords({...familiarContext,expressions:()=>Object.values(course.episodes).flatMap(episode=>Object.values(episode.expressions)),save,render,toast});
 const studio=createStudio({state:()=>state,...familiarContext,save,render,toast,navigate,jump,amended,cloudSaving,sync:()=>sync.now(),syncStatus:()=>syncStatus,export:exportProgress,courseProgress,progressControls});
 const whole=createEpisodeView({state:()=>state,...familiarContext,interact:()=>{interacted=true;},save,render,toast,amended,studio,continueAt:id=>{if(reachLine(state,lines,id))jump(lines.findIndex(line=>line.id===id));}});
 const sync=cloudSync({enabled:cloudSaving,getState:()=>{whole.flush();return course;},merge:mergeCourses,applyState:remote=>{
